@@ -1,0 +1,45 @@
+{
+  "version": "eosio::abi/1.0",
+  "types": [
+     { "type": "name", "new_type_name": "account_name" }
+  ],
+  "structs": [
+    {
+      "name": "set",
+      "base": "",
+      "fields": [
+        { "name": "owner", "type": "account_name" },
+        { "name": "json", "type": "string" }
+      ]
+    },
+
+    {
+      "name": "accounts_row",
+      "base": "",
+      "fields": [
+        { "name": "owner", "type": "account_name" },
+        { "name": "json", "type": "string" },
+        { "name": "created_at", "type": "time_point_sec" },
+        { "name": "updated_at", "type": "time_point_sec" }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "set",
+      "type": "set",
+      "ricardian_contract": ""
+    }
+  ],
+  "tables": [
+    {
+      "name": "accountsjson",
+      "type": "accounts_row",
+      "index_type": "i64",
+      "key_names" : ["owner"],
+      "key_types" : ["name"]
+    }
+  ],
+  "clauses": [],
+  "ricardian_clauses": []
+}
